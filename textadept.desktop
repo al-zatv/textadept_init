@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=textadept
+Icon=application-default-icon
+Exec=/home/zatv/tools/textadept/textadept
+NoDisplay=false
+Categories=Utility;X-XFCE;X-Xfce-Toplevel;
+StartupNotify=false
+Terminal=false
