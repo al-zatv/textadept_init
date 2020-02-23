@@ -1,1 +1,0 @@
-# textadept_init
