@@ -8,7 +8,8 @@ set -x
 if [ "$1" = "--install" ]; then
   mkdir -p $HOME/tools/textadeptx
   cd $HOME/tools
-  wget https://foicica.com/textadept/download/textadept_LATEST.x86_64.tgz
+  #wget https://foicica.com/textadept/download/textadept_LATEST.x86_64.tgz
+  wget https://github.com/orbitalquark/textadept/releases/download/textadept_11.1/textadept_11.1.linux.tgz -o textadept_LATEST.x86_64.tgz
   tar zxvf textadept_LATEST.x86_64.tgz
   rm textadept_LATEST.x86_64.tgz
   extr_ta_dir=$PWD/textadept_*.x86_64
