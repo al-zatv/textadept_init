@@ -9,11 +9,12 @@
 -- non-locale symbols corresponding to russian letters
 --      for юабцдефгхийклмнопярстужвьызшэщчъ (key codes 1728-1759)
 
-local en = ".f,wltau[bqrkvyjgzhcne;dmspi'ox]"
-for i = 1, string.len(en) do
-  _G.keys.KEYSYMS[1727+i] = string.sub(en,i,i)
-end
-_G.keys.KEYSYMS[1699] = "`"  -- for ё
+--cyr...
+--local en = ".f,wltau[bqrkvyjgzhcne;dmspi'ox]"
+--for i = 1, string.len(en) do
+--  _G.keys.KEYSYMS[1727+i] = string.sub(en,i,i)
+--end
+--_G.keys.KEYSYMS[1699] = "`"  -- for ё
 
 --print "init.lua: hi"
 
@@ -41,11 +42,12 @@ keys['ctrl+o'] = io.open_file
 keys.f3=io.open_file
 --keys[alt..'+ctrl+o'] = io.open_recent_file
 
-keys[alt..'o'] = io.reload_file
-keys['ctrl+s'] = io.save_file
-keys[alt..'ctrl+s'] = io.save_file_as
+keys[alt..'o'] = buffer.reload
+keys['ctrl+s'] = buffer.save -- io.save_file
+keys.f2 = buffer.save
+keys[alt..'ctrl+s'] = buffer.save_as
 -- TODO: io.save_all_files
-keys['ctrl+w'] = io.close_buffer
+keys['ctrl+w'] = buffer.close
 keys[alt..'ctrl+w'] = io.close_all_buffers
 -- TODO: textadept.sessions.load
 -- TODO: textadept.sessions.save
@@ -58,9 +60,10 @@ keys['ctrl+f'] = m_search[_L['Find']][2]
 keys.f7 = keys['ctrl+f']
 keys['ctrl+g'] = ui.find.find_next                                                                                     
 keys[alt..'ctrl+g'] = ui.find.find_prev                                                                                    
+
 --keys['ctrl+r'] = m_search[_L['Replace']][2]
 keys['ctrl+r'] = ui.find.replace
-keys.f4 = keys['ctrl+r']
+--keys.f4 = keys['ctrl+r']
 keys[alt..'ctrl+R'] = ui.find.replace_all                                                                        
 -- Find Next is an when find pane is focused in GUI.                                                                                           
 -- Find Prev is ap when find pane is focused in GUI.                                                                                           
